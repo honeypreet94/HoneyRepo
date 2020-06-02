@@ -1,0 +1,26 @@
+package client;
+
+import org.springframework.beans.factory.support.BeanDefinitionReader;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+import client.Client;
+import engine.Engine;
+import car.Car;
+
+public class Client {
+	
+	public static void main(String a[])
+	{
+		Resource r=new ClassPathResource("resource/car.xml");
+		DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+	    BeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+	    reader.loadBeanDefinitions(r);
+		Engine en=(Engine)beanFactory.getBean("e");
+		Car c=(Car)beanFactory.getBean("c");
+		c.printCar();
+	}
+
+}

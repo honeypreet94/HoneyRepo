@@ -1,0 +1,12 @@
+package secondary_array;
+
+public class MyClass {
+    static int calculate(int i, int j)
+   {
+        return 2+i*j;
+    }
+public static void main(String [] args) {
+        int k = MyClass.calculate(5,10);
+        System.out.println(k);
+    }
+}

@@ -1,0 +1,22 @@
+package driver;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+import main.SetterMain;
+
+public class Setter {
+	
+public static void main(String arg[])
+{
+	
+	Resource r=new ClassPathResource("xmls/SpringSetter.xml");
+	BeanFactory factory=new XmlBeanFactory(r);
+	
+	SetterMain t=(SetterMain)factory.getBean("SetterMain.class");
+	t.hello("Mani");
+}
+}
+

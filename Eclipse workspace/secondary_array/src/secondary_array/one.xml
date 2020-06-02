@@ -1,0 +1,16 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			
+			
+<beans>
+	
+	<bean id="c" class="Car">
+		<property name="engine">
+		<list>
+		<bean id="e" class="Engine"/>
+		<bean id="ef" class="Engine"/>
+		</list>
+		</property>
+	</bean>
+
+</beans>
