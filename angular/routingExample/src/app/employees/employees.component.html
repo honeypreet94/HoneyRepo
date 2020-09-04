@@ -1,0 +1,10 @@
+<div>
+    <h1>{{title}}</h1>
+    <ul>
+        <li *ngFor='let employee of employees'>
+            <a [routerLink]="employee.id">
+                {{employee.name}}
+            </a>
+        </li>
+    </ul>
+</div>

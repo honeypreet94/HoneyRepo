@@ -1,0 +1,12 @@
+#employeesList{
+    color: 'purple';
+}
+
+#addEmployee{
+    color: 'purple';
+}
+
+a :active{
+    font-weight: bold;
+    color: blue;
+}

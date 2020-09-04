@@ -1,0 +1,11 @@
+
+  <h1> {{title}} </h1>
+  <br><br>
+  <nav>
+    <a id='employeesList' routerLink="/employees" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >
+      Employees List
+    </a>
+    &nbsp;
+    <a id='addEmployee' routerLink="/addemployee" routerLinkActive="Active"> Add Employee</a>
+  </nav>
+  <router-outlet></router-outlet>

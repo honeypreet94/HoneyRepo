@@ -1,0 +1,33 @@
+<br>
+<h3>{{title}}</h3>
+<div id="div">
+    <br><br>
+    <form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)">
+    <table>
+    <tr>
+    <td><label> Employees Name: </label></td>
+    <td><input type="text" class='text' formControlName = "name"/></td>
+    </tr>
+    <tr>
+    <td><label> Location: </label></td>
+    <td><input id="location" list="location" name="location" formControlName="location" >
+        <datalist id="location" class='text1' >
+        <option value="Bangalore">
+        <option value="Pune">
+        <option value="Chennai">
+        <option value="Hyderabad">
+        </datalist> </td>
+    </tr>
+    <tr>
+    <td><label> Email: </label></td>
+    <td><input type="text" class='text1'  formControlName="email"/></td>
+    </tr>
+    <tr>
+    <td><label> Mobile: </label></td>
+    <td><input type="text" class='text1' formControlName="mobile" /></td>
+    </tr></table>
+    <br>
+    <input type="submit" id="submit" [disabled] = "!formdata.valid" 
+     value="Submit">
+</form>
+</div>

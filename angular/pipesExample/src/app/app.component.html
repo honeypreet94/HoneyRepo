@@ -1,0 +1,18 @@
+<div>
+  <h2> {{title}}</h2>
+  <h2> {{todayDate | date:"dd-MMM-yyyy" }}</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th> Name </th>
+        <th> Location </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let employee of employees'>
+        <td> {{employee.name | uppercase}}</td>
+        <td> {{employee.location}} </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,37 @@
+<div>
+    <br><br>
+    <label> Filter By: </label> <br>
+    <input type="text" id="filter" [(ngModel)]='nameFilter'/>
+    <br><br>
+    <label > Total Number of Employees :  {{filterMetadata.count}} </label>
+    <br><br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Emp ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Email</th>
+                <th> Mobile</th>
+                <th> Edit</th>
+                <th>Delete</th>  
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let employee of sortData|employeeFilter:nameFilter:filterMetadata" >
+            <td><nav>
+                <a id='employeesList' routerLink="/employeeById" routerLinkActive="active">
+                    {{employee.id}}</a>
+            </nav></td>
+            <td>{{employee.name | uppercase}}</td>
+            <td>{{employee.location}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.mobile}}</td>
+            <td> <button id="edit" (click)="edit()">Edit</button></td>
+            <td> <button id="delete" (click)="delete()">Delete</button></td>
+        </tr>
+    </tbody>
+    </table>
+
+    <label > Total Number of Employees :  {{filterMetadata.count}} </label>
+</div>

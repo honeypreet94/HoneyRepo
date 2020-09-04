@@ -1,0 +1,20 @@
+<div>
+  <h2> {{title}} </h2>
+  <label> search filter :</label>
+  <input type="text" [(ngModel)]='nameFilter'/>
+  <br><br>
+  <table border="1">
+    <thead>
+      <tr>
+        <th> Name</th>
+        <th> Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let employee of employees | employeeFilter : nameFilter'>
+          <td> {{employee.name | uppercase}} </td>
+          <td> {{employee.location}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
