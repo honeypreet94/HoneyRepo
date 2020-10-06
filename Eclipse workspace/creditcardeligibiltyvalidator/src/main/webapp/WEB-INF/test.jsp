@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="Java"%>
 <html>
     <head>
-        <title>
+        <title> Hello Spring MVC
         </title>
        </head>
 
     <body>
-    Test
+    <H2> ${message} </H2>
     </body>
 </html>

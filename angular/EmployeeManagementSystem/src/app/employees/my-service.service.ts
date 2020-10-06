@@ -24,9 +24,13 @@ public createEmployee(employee: { name: string, location: string,email:string, m
 }
 
 public deleteEmployee(id){
+   console.log("delete:"+ id);
    return this.httpClient.delete(`${this.serverUrl + 'employees'}/${id}`)
 }
-public updateEmployee(employee: {id: number, name: string, location: string, mobile: number}){
-   return this.httpClient.put(`${this.serverUrl + 'employees'}/${employee.id}`, employee)
+public updateEmployee(id:number,employee:{id:number,name: string, location: string,email:string, mobile: number}){
+  
+   console.log("employee "+ employee.name);
+   console.log(id);
+   return this.httpClient.put(`${this.serverUrl + 'employees'}/${id}`, employee); 
 }
 }

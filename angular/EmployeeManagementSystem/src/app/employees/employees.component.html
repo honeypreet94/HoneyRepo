@@ -20,15 +20,15 @@
         <tbody>
         <tr *ngFor="let employee of sortData|employeeFilter:nameFilter:filterMetadata" >
             <td><nav>
-                <a id='employeesList' routerLink="/employeeById" routerLinkActive="active">
+                <a id='employeesList' routerLink="/employeeById/{{employee.id}}" routerLinkActive="active">
                     {{employee.id}}</a>
             </nav></td>
             <td>{{employee.name | uppercase}}</td>
             <td>{{employee.location}}</td>
             <td>{{employee.email}}</td>
             <td>{{employee.mobile}}</td>
-            <td> <button id="edit" (click)="edit()">Edit</button></td>
-            <td> <button id="delete" (click)="delete()">Delete</button></td>
+            <td> <button id="edit" (click)="edit(employee)">Edit</button></td>
+            <td> <button id="delete" (click)="delete(employee)">Delete</button></td>
         </tr>
     </tbody>
     </table>

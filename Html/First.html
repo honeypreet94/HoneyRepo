@@ -1,0 +1,93 @@
+<Html>
+<Head>
+	<Title> Login Page </Title>
+	
+	<Style>
+		#s{
+		position:relative;
+		left:50%;
+		
+		}
+	</Style>
+		
+	<Script>
+		if(sessionStorage.hits)
+		{
+			sessionStorage.hits=Number(sessionStorage.hits)+1;
+		}
+		else
+		{
+			sessionStorage.hits=1;
+		}
+		document.write("Total hits : " + sessionStorage.hits);
+		
+		if(localStorage.hits)
+		{
+			localStorage.hits=Number(localStorage.hits)+1;
+		}
+		else
+		{
+			localStorage.hits=1;
+		}
+		document.write("Total local hits : " + localStorage.hits);
+		
+		function login()
+		{
+			if(document.getElementById("Password")="honey123")
+			{
+				document.write("Login Successful");
+			}
+			else
+				document.write("Authentication failed");
+		}
+		
+		function reset()
+		{
+			document.getElementById("Username").value="";
+			document.getElementById("Password").value="";
+		}
+		
+		function drawShape()
+		{
+			var canvas=document.getElementById("mycanvas");
+			
+			if(canvas.getContext)
+			{
+				var ctx=canvas.getContext("2D");
+				ctx.beginPath();
+				ctx.moveTo(25,25);
+				ctx.lineTo(105,25);
+				ctx.lineTo(25,105);
+				ctx.fill();
+			}
+		}
+		
+		
+	</Script>
+</Head>
+<Body>
+	<H1 align="center"> Login </H1>
+	<Label for="Username"> Username:</Label>
+		<Input type="text" id="Username" align="center" placeholder="Example@mail.com" autofocus required/><br /><br /> <br />
+	
+	<Label for="Password"> Password:</Label>
+	<Input type="Password" id="Password" align="center" placeholder="Alphanumeric" required/><br /><br /> <br />
+	
+	<input type="Submit" id="submit" onclick="login()"/> <br><br>
+	<input type="Reset" id="Reset" onclick="reset()"/> <br>
+	<input type="button" id="button" value="canvas" onclick="drawShape()"/> 
+	
+	<canvas id="mycanvas"> </canvas>
+	
+<!--	<video width="1000" height="1000" controls autoplay>
+		<source src="F:\Honey\WhatsApp Videos\VID-20171002-WA0002.mp4" type="video/mp4">
+		Your browser doesnot support the <video> element.
+	</video> -->
+	
+	<H4 align="center"> SVG </H4>
+	<svg id="s" height="100" >
+		<circle id="redcircle"  cx="50" cy="50" r="50" fill="red"/>
+	</svg>
+
+</Body>
+</Html>
