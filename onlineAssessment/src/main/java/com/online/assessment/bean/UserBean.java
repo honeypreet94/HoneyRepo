@@ -18,7 +18,7 @@ public class UserBean {
     @Column
     private String password;
     @Column
-    private String UserType;
+    private String userType="candidate";
 
 
     public UserBean(String firstName, String lastName, String emailId, String password, String userType) {
@@ -26,7 +26,7 @@ public class UserBean {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
-        UserType = userType;
+        this.userType = userType;
     }
 
     public UserBean()
@@ -35,11 +35,11 @@ public class UserBean {
     }
 
     public String getUserType() {
-        return UserType;
+        return userType;
     }
 
     public void setUserType(String userType) {
-        UserType = userType;
+        this.userType = userType;
     }
 
     public String getEmailId() {
@@ -62,7 +62,7 @@ public class UserBean {
         return lastName;
     }
 
-    public void setLastName(String lasttName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 

@@ -4,10 +4,10 @@
     </head>
     <body>
         <br><br>
-         <a href="/springAssessment.jsp" >Spring Assessment </a>
+         <a href="/springAssessment" >Spring Assessment </a>
           <br>
-          <a href="/hibernateAssessment.jsp" >Hibernate Assessment </a>
+          <a href="/hibernateAssessment" >Hibernate Assessment </a>
           <br><br>
-          <a href='@Url.Action("logout", "BPG")'>Logout </a>
+          <a href="/logout">Logout </a>
     </body>
 </html>

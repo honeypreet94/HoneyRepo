@@ -5,40 +5,41 @@
 <html>
     <head>
         <h2> Hibernate Assessment </h2>
+       
     </head>
     <body>
-        <form:form method="POST" action="">
-            <form:label path="ques1"> Question 1: What is the full form of ORM? </form:label>
-            <form:input type="radio" >Object Random Memory </form:input>
-            <form:input type="radio" >Object Relational Mismatch </form:input>
-            <form:input type="radio" >Object Relational Mapping </form:input>
-            <form:input type="radio" >Object Random Memory </form:input>
+        <form:form method="POST" action="/hibernate">
+            <label > Question 1: What is the full form of ORM? </label>
+            <form:radiobutton  path="answer1" label="Object Random Memory" value="Object Random Memory"/>
+            <form:radiobutton  path="answer1" label="Object Relational Mismatch"  value="Object Relational Mismatch" />
+            <form:radiobutton  path="answer1" label="Object Relational Mapping"  value="Object Relational Mapping" />
+            <form:radiobutton  path="answer1" label="Object Random Memory"  value="Object Random Memory" />
             <br><br>
-            <form:label path="ques2"> Question 2: In Hibernate, based on directionality, what could be the mappings? </form:label>
-             <form:input type="radio" >Uni-directional & bi-directional </form:input>
-             <form:input type="radio" >one-to-many & many-to-one</form:input>
-             <form:input type="radio" >Inheritence mapping </form:input>
-             <form:input type="radio" >north & south mapping </form:input>
+            <label > Question 2: In Hibernate, based on directionality, what could be the mappings? </label>
+             <form:radiobutton  path="answer2" label="Uni-directional & bi-directional" value="Uni-directional & bi-directional" />
+             <form:radiobutton  path="answer2" label="one-to-many & many-to-one" value="one-to-many & many-to-one" />
+             <form:radiobutton  path="answer2" label="Inheritence mapping" value="Inheritence mapping" />
+             <form:radiobutton  path="answer2" label="north & south mapping" value="north & south mapping" />
             <br><br>
-            <form:label path="ques3"> Question 3: In an Hibernate application, which file would have datasource details? </form:label>
-            <form:input type="radio" >hibernate mapping file </form:input>
-            <form:input type="radio" >configuration file </form:input>
-            <form:input type="radio" >Model/Entity class</form:input>
-            <form:input type="radio" >HibernateUtil class </form:input>
+            <label > Question 3: In an Hibernate application, which file would have datasource details? </label>
+            <form:radiobutton  path="answer3" label="hibernate mapping file"  value="hibernate mapping file" />
+            <form:radiobutton  path="answer3" label="configuration file"  value="configuration file" />
+            <form:radiobutton  path="answer3" label="Model/Entity class" value="Model/Entity class"/>
+            <form:radiobutton  path="answer3" label="HibernateUtil class"  value="HibernateUtil class" />
             <br><br>
-                <form:label path="ques4"> Question 4: What is the full form of HQL? </form:label>
-            <form:input type="radio" >High-Level Query Language </form:input>
-            <form:input type="radio" >Hidden Query Language </form:input>
-            <form:input type="radio" >Hibernate Query Language </form:input>
-            <form:input type="radio" >Hibernate Quadratic Language </form:input>
+                <label> Question 4: What is the full form of HQL? </label>
+            <form:radiobutton  path="answer4" label="High-Level Query Language"  value="High-Level Query Language" />
+            <form:radiobutton  path="answer4" label="Hidden Query Language"  value="Hidden Query Language" />
+            <form:radiobutton  path="answer4" label="Hibernate Query Language"  value="Hibernate Query Language" />
+            <form:radiobutton  path="answer4" label="Hibernate Quadratic Language"  value="Hibernate Quadratic Language" />
             <br><br>
-            <form:label path="ques5"> Question 5: In an Hibernate application,concurrency can be controlled bt setting? </form:label>
-            <form:input type="radio" >concurrency level </form:input>
-            <form:input type="radio" >one-to-one mapping </form:input>
-            <form:input type="radio" >one-to-many bu-directional mapping </form:input>
-            <form:input type="radio" >isolation levels</form:input>
+            <label > Question 5: In an Hibernate application,concurrency can be controlled bt setting? </label>
+            <form:radiobutton  path="answer5" label="concurrency level"  value="concurrency level" />
+            <form:radiobutton  path="answer5" label="one-to-one mapping"  value="one-to-one mapping" />
+            <form:radiobutton  path="answer5" label="one-to-many bu-directional mapping"  value="one-to-many bu-directional mapping" />
+            <form:radiobutton  path="answer5" label="isolation levels" value="isolation levels"/>
 
-            <input type="submit" value="submit Test"/>
+            <input type="submit" value="submit Test" />
         </form:form>
     </body>
 </html>

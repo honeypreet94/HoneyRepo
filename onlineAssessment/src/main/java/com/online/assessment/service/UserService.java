@@ -1,5 +1,6 @@
 package com.online.assessment.service;
 
+import com.online.assessment.bean.Test;
 import com.online.assessment.bean.UserBean;
 import com.online.assessment.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +15,12 @@ public class UserService {
     UserRepository userRepository;
     boolean flag=false;
     //userRepository.userType="candidate";
-    String userType="candidate";
+    String userType;
     public void store()
     {
-        userRepository.save(new UserBean("Steve","Martin","steve@gmail.com","wipro@123","admin"));
-        userRepository.save(new UserBean("Roger","Kutcher","roger@gmail.com","wipro@123","admin"));
+        userRepository.saveAndFlush(new UserBean("Steve","Martin","steve@gmail.com","wipro@123","admin"));
+        userRepository.saveAndFlush(new UserBean("Roger","Kutcher","roger@gmail.com","wipro@123","admin"));
+        userRepository.saveAndFlush(new UserBean("Honey","Preet","honey@gmail.com","honey","candidate"));
         flag=true;
     }
 
@@ -48,7 +50,7 @@ public class UserService {
 
     public boolean registerPage(UserBean bean)
     {
-        UserBean bean1=userRepository.save(bean);
+        UserBean bean1=userRepository.saveAndFlush(bean);
         if(null==bean1)
             return false;
         else
@@ -59,5 +61,7 @@ public class UserService {
     {
         return userType;
     }
+
+
 
 }
