@@ -4,6 +4,6 @@
 <html>
     <h1> Congratulations !!! you have passed !!!</h2>
     <br><br>
-    <a href"home">Exit</a>
+    <a href="/logout">Exit</a>
 
 </html>

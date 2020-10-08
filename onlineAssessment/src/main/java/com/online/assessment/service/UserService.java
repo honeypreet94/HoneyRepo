@@ -24,7 +24,7 @@ public class UserService {
         flag=true;
     }
 
-    public boolean login(String emailid,String password)
+    public String login(String emailid,String password)
     {
         if(flag==false)
             store();
@@ -32,15 +32,16 @@ public class UserService {
         //UserBean userBean=userRepository.findByEmailId(emailid).isPresent() ? userRepository.findByEmailId(emailid).get():null;
         UserBean userBean=userRepository.findById(emailid).isPresent() ? userRepository.findById(emailid).get():null;
         if(null==userBean)
-            return false;
+            return "not found";
         else
         {
             userType=userBean.getUserType();
             if(userBean.getPassword().equals(password))
-                return true;
+                return "true";
+
         }
 
-        return false;
+        return "false";
     }
 
     public List<UserBean> userList()

@@ -4,21 +4,21 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="testbean")
+@Table(name="testresult")
 public class Test {
     @Id
     @Column
     @GeneratedValue
     private int id;
-    @Column
+    @Column(name="test_date")
     private Date testDate;
     @Column
     private String assessment;
-    @Column
+    @Column(name="test_marks")
     private int testMarks;
-    @Column
+    @Column(name="email_id")
     private String emailId;
-    @Column
+    @Column(name="total_marks")
     private int totalMarks=50;
     @Column
     private String result;

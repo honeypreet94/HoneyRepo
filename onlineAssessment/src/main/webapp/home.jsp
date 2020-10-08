@@ -8,18 +8,37 @@
     </head>
 
     <body>
+
+        <head>
+        <script type="text/javascript">
+
+                  function emailInvalid(textbox)
+                           {
+                               var text=textbox.value;
+                                var regex =^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$ ;
+                                if(text.length==0)
+                                	textbox.setCustomValidity("Please fill out Required field");
+                                else if(!regex.test(text))
+                                	textbox.setCustomValidity('Please match the requested format');
+                                else
+                                	textbox.setCustomValidity('');
+                              return true;
+                            }
+
+                </script>
+        </head>
         <h1> Welcome to Online Assessments</h1>
         <br>
         <h2> Login </h2>
         <br>
         <form:form method="POST" action="/login">
             <form:label path="emailId"> Email ID : </form:label>
-            <form:input type="text" path="emailId" required="required"/>
+            <form:input type="text" path="emailId" required="required" oninvalid="emailInvalid(this);" oninput="emailInvalid(this)"/>
             <br><br>
             <form:label path="password"> Password : </form:label>
             <form:input type="password" path="password" required="required"/>
             <br><br>
-            <input type="submit" value="LOGIN" />
+            <input type="submit" value="LOGIN"  />
             <br><br>
 
         </form:form>
