@@ -1,0 +1,1 @@
+create table adminBean (id int not null auto_increment,emailId varchar(20) ,password varchar(20));
