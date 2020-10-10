@@ -13,8 +13,8 @@
                   <h2> Login </h2>
                   <br>
                   <form:form method="POST" action="/login">
-                      <form:label path="emailId"> Email ID : </form:label>
-                      <form:input type="text" path="emailId" required="required" />
+                      <form:label path="email_id"> Email ID : </form:label>
+                      <form:input type="text" path="email_id" required="required" />
                       <br><br>
                       <form:label path="password"> Password : </form:label>
                       <form:input type="password" path="password" required="required"/>

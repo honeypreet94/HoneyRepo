@@ -8,9 +8,6 @@
   </head>
 
   <body>
-        <a href="/createSurvey">Create New Survey</a>
-        <br><br>
-        <a href="/launchSurvey">Launch Survey</a>
-        <br><br>
+        <h1>Something went wrong!!!</h1>
   </body>
 </html>

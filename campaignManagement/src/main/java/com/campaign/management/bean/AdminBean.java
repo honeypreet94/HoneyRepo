@@ -13,21 +13,15 @@ public class AdminBean {
     @Id
     @Column
 
-    private String emailId;
+    private String email_id;
     @Column
     private String password;
 
     public AdminBean() {
     }
 
-    public AdminBean(String emailId, String password) {
-        this.emailId = emailId;
-        this.password = password;
-    }
-
-    public AdminBean(int id,String emailId, String password) {
-        this.objId=id;
-        this.emailId = emailId;
+    public AdminBean(String email_id, String password) {
+        this.email_id = email_id;
         this.password = password;
     }
 
@@ -39,12 +33,12 @@ public class AdminBean {
         this.objId = objIid;
     }
 
-    public String getEmailId() {
-        return emailId;
+    public String getEmail_id() {
+        return email_id;
     }
 
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
+    public void setEmail_id(String email_id) {
+        this.email_id = email_id;
     }
 
     public String getPassword() {

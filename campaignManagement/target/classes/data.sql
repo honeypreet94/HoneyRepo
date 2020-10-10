@@ -3,11 +3,11 @@ drop table if exists surveylist;
 drop table if exists surveyquestions;
 drop table if exists answers;
 
-create table adminbean (objid int not null auto_increment,emailId varchar2(20) primary key ,password varchar2(20));
+create table adminbean (objid int not null auto_increment,email_id varchar2(20) primary key ,password varchar2(20));
 
-create table surveylist (objid int auto_increment primary key, title varchar2(100),
- url varchar2(100) unique not null, isActive int, emailId varchar2(20),
- foreign key (emailid) references adminbean(emailid)
+create table surveylist (objid int auto_increment primary key, title varchar2(100),description varchar2(4000),
+ url varchar2(100) unique not null, is_active int,finished int, email_id varchar2(20),
+ foreign key (email_id) references adminbean(email_id)
 );
 
 create table surveyquestions (objid int auto_increment primary key, questions2list int not null,

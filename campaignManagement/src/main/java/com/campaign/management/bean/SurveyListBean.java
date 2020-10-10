@@ -13,22 +13,28 @@ public class SurveyListBean {
     @Column
     private String title;
     @Column
+    private String description;
+    @Column
     private String url;
     @Column
-    private int isActive;
+    private int is_active;
+    @Column
+    private int finished;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="emailId")
+    @JoinColumn(name="email_id")
     private AdminBean adminBean;
 
     public SurveyListBean() {
     }
 
-    public SurveyListBean(int objid, String title, String url, int isActive, AdminBean adminBean) {
+    public SurveyListBean(int objid, String title,String description, String url, int is_active,int finished, AdminBean adminBean) {
         this.objid = objid;
         this.title = title;
+        this.description=description;
         this.url = url;
-        this.isActive = isActive;
+        this.is_active = is_active;
+        this.finished=finished;
         this.adminBean = adminBean;
     }
 
@@ -44,6 +50,14 @@ public class SurveyListBean {
         return title;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -56,12 +70,20 @@ public class SurveyListBean {
         this.url = url;
     }
 
-    public int getIsActive() {
-        return isActive;
+    public int getIs_active() {
+        return is_active;
     }
 
-    public void setIsActive(int isActive) {
-        this.isActive = isActive;
+    public void setIs_active(int is_active) {
+        this.is_active = is_active;
+    }
+
+    public int getFinished() {
+        return finished;
+    }
+
+    public void setFinished(int finished) {
+        this.finished = finished;
     }
 
     public AdminBean getAdminBean() {

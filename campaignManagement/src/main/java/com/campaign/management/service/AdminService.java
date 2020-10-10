@@ -21,11 +21,11 @@ public class AdminService {
         flag=true;
     }
 
-    public String login(String emailid,String password)
+    public String login(String email_id,String password)
     {
         if(flag==false)
             store();
-        AdminBean adminBean=adminRepository.findById(emailid).isPresent() ? adminRepository.findById(emailid).get():null;
+        AdminBean adminBean=adminRepository.findById(email_id).isPresent() ? adminRepository.findById(email_id).get():null;
         if(null==adminBean)
             return "false";
         else
