@@ -65,10 +65,12 @@ public class CreateSurveyController {
     }
 
     @RequestMapping(value="/addAnswer",method= RequestMethod.POST )
-    public void addAnswer(@ModelAttribute("addAnswer")SurveyQuestionsBean bean) {
+    public ModelAndView addAnswer(@ModelAttribute("addAnswer")SurveyQuestionsBean bean) {
 
         boolean out= createQuestionsService.createQuestion(question,answerType,bean.getOptions());
-        
+        if(out==true)
+            return new ModelAndView("createForm");
+        return new ModelAndView("error");
 
     }
 }

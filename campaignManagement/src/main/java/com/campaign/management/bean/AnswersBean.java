@@ -15,6 +15,10 @@ public class AnswersBean {
     private SurveyQuestionsBean surveyQuestionsBean;
 
     @Column
+    private String name;
+    @Column
+    private String emailId;
+    @Column
     private String answerType;
     @Column
     private String answer;
@@ -27,6 +31,29 @@ public class AnswersBean {
         this.surveyQuestionsBean = surveyQuestionsBean;
         this.answerType = answerType;
         this.answer = answer;
+    }
+
+    public AnswersBean(String name, String emailId, String answerType, String answer) {
+        this.name = name;
+        this.emailId = emailId;
+        this.answerType = answerType;
+        this.answer = answer;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
     }
 
     public int getObjid() {
