@@ -3,7 +3,9 @@ package com.campaign.management.service;
 import com.campaign.management.bean.AdminBean;
 import com.campaign.management.repository.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AdminService {
 
     @Autowired
@@ -15,6 +17,7 @@ public class AdminService {
         //adminRepository.saveAndFlush(new AdminBean("steve@gmail.com","wipro@123"));
         //adminRepository.saveAndFlush(new AdminBean("roger@gmail.com","wipro@123"));
         adminRepository.saveAndFlush(new AdminBean("honey@gmail.com","honey"));
+        adminRepository.saveAndFlush(new AdminBean("m@m.com","12"));
         flag=true;
     }
 

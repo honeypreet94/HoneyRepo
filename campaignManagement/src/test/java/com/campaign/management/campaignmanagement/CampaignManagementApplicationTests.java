@@ -1,4 +1,4 @@
-package com.campaign.management.campaignManagement;
+package com.campaign.management.campaignmanagement;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

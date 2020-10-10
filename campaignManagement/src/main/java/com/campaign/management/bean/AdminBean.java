@@ -7,11 +7,12 @@ import javax.persistence.*;
 
 public class AdminBean {
 
-    @Id
     @Column
     @GeneratedValue
-    private int id;
+    private int objId;
+    @Id
     @Column
+
     private String emailId;
     @Column
     private String password;
@@ -24,12 +25,18 @@ public class AdminBean {
         this.password = password;
     }
 
-    public int getId() {
-        return id;
+    public AdminBean(int id,String emailId, String password) {
+        this.objId=id;
+        this.emailId = emailId;
+        this.password = password;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getObjId() {
+        return objId;
+    }
+
+    public void setObjId(int objIid) {
+        this.objId = objIid;
     }
 
     public String getEmailId() {

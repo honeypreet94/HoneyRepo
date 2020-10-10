@@ -20,7 +20,7 @@ public class HomeController {
     @Autowired
     AdminService adminService;
 
-    @RequestMapping(value="/loginPage" )
+    @RequestMapping(value="/login" )
     public ModelAndView loginPage(HttpServletResponse response) throws IOException {
         return new ModelAndView("loginPage","command",new AdminBean());
     }
