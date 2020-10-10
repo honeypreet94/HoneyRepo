@@ -32,6 +32,12 @@ public class SurveyQuestionsBean {
         this.options = options;
     }
 
+    public SurveyQuestionsBean(String question, String answerType, String options) {
+        this.question = question;
+        this.answerType = answerType;
+        this.options = options;
+    }
+
     public int getObjid() {
         return objid;
     }

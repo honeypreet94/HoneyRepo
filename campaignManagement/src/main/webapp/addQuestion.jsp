@@ -10,11 +10,10 @@
   <body>
         <h2>Add questions to your survey here!!!</h2>
         <form:form method="POST" action="/addQuestion">
-            <form:label path="title"> Question Title : </form:label>
-            <form:textarea path="title" required="required" />
-            <br><br>
-            <label>What kind of responses you wish</label>
-            <form:label path="description">What kind of responses you wish for?</form:label>
+            <form:label path="question"> Question 1: </form:label>
+            <form:input type="text" path="question" required="required" />
+             <br><br>
+            <label >What kind of responses you wish for?<label>
             <form:radiobutton path="answerType" value="Radio Button"  label="Radio Button" />
             <form:radiobutton path="answerType" value="Checkbox" label="Checkbox" />
             <form:radiobutton path="answerType" value="Text Field" label="Text Field"/>
