@@ -5,12 +5,17 @@
 <html>
 
 
-    <form:form method="POST" action="">
-        <label>Name: </label>
-         <form:input type="text" path="name"></form:input>
-         <label>Email Id: </label>
-         <form:input type="text" path="emailId"/>
-
+    <form:form method="POST" action="/newSurvey">
+        <table>
+            <tr><td>
+            <form:label path="title">Title: </form:label></td>
+            <td><form:input type="text" path="title"></form:input></td></tr>
+            <tr><td>
+            <form:label path="description">Describe your survey: </form:label></td>
+            <td><form:textarea path="description"/></td>
+            <tr><td>
+            <input type="submit" value="Create Survey"/></td>
+        </table>
 
      </form:form>
 

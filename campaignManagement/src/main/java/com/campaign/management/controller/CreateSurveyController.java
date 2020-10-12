@@ -24,9 +24,7 @@ public class CreateSurveyController {
     CreateSurveyService createSurveyService;
     @Autowired
     CreateQuestionsService createQuestionsService;
-    String question;
-    String answerType;
-    int count=0;
+
     @RequestMapping(value="/newSurvey",method= RequestMethod.POST )
     public ModelAndView createSurvey(@ModelAttribute("newSurvey")SurveyListBean bean, HttpSession session) throws IOException {
 
@@ -41,30 +39,33 @@ public class CreateSurveyController {
     }
 
     @RequestMapping(value="/addQuestion",method= RequestMethod.POST )
-    public ModelAndView addQuestion(@ModelAttribute("addQuestion")SurveyQuestionsBean bean)
+    public ModelAndView addQuestion(@ModelAttribute("addQuestion")SurveyQuestionsBean bean, HttpSession session)
     {
-        bean.setQuestion(bean.getQuestion());
+        /*bean.setQuestion(bean.getQuestion());
         bean.setAnswerType(bean.getAnswerType());
         bean.setOption1(bean.getOption1());
         bean.setOption1(bean.getOption2());
         bean.setOption1(bean.getOption3());
-        bean.setOption1(bean.getOption4());
+        bean.setOption1(bean.getOption4());*/
+        Integer integer = (Integer)session.getAttribute("surveyId");
+        SurveyListBean temp = new SurveyListBean();
+        temp.setObjid(integer.intValue());
+        bean.setSurveyListBean(temp);
         boolean result=createQuestionsService.createQuestion(
                 bean.getQuestion(),bean.getAnswerType(),bean.getOption1(),bean.getOption2(),
                 bean.getOption3(),bean.getOption4());
         if(result==true)
         {
-            count++;
-            if(count<6)
-                return new ModelAndView("addQuestion");
-            else
-                return new ModelAndView("createSurvey");
+            return new ModelAndView("addQuestion");
         }
         else
             return new ModelAndView("error");
+    }
 
-
-
+    @RequestMapping(value="/saveSurvey",method= RequestMethod.POST )
+    public ModelAndView addQuestion()
+    {
+        return new ModelAndView("success");
     }
 
 }

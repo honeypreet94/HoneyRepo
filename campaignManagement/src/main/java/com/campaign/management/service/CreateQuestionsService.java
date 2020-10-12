@@ -3,7 +3,9 @@ package com.campaign.management.service;
 import com.campaign.management.bean.SurveyQuestionsBean;
 import com.campaign.management.repository.CreateQuestionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CreateQuestionsService {
     @Autowired
     CreateQuestionsRepository createQuestionsRepository;

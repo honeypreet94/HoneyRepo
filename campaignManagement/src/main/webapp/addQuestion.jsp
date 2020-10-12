@@ -8,16 +8,48 @@
       <script>
         function display(text)
         {
-            if(text.value=="Radio Button" || text.value="Checkbox")
+            console.log(text.value);
+            if(text.value=="Radio Button" || text.value=="Checkbox")
             {
-                document.getElementById("text1").style.visibility="visisble";
-                document.getElementById("text2").style.visibility="visisble";
-                document.getElementById("text3").style.visibility="visisble";
-                document.getElementById("text4").style.visibility="visisble";
+                var x1 = document.getElementById("text1");
 
+                if (window.getComputedStyle(x1).visibility === "hidden") {
+                    x1.style.visibility = "visible";
+                }
+                var x2 = document.getElementById("text2");
+                if (window.getComputedStyle(x2).visibility === "hidden") {
+                    x2.style.visibility = "visible";
+                }
+                var x3 = document.getElementById("text3");
+                if (window.getComputedStyle(x3).visibility === "hidden") {
+                    x3.style.visibility = "visible";
+                }
+                var x4 = document.getElementById("text4");
+                if (window.getComputedStyle(x4).visibility === "hidden") {
+                    x4.style.visibility = "visible";
+                }
             }
+            else if(text.value=="Text Field")
+            {
+                console.log("here");
+                var x1 = document.getElementById("text1");
 
-
+                if (window.getComputedStyle(x1).visibility === "hidden") {
+                    x1.style.visibility = "visible";
+                }
+                var x2 = document.getElementById("text2");
+                if (window.getComputedStyle(x2).visibility === "visible") {
+                    x2.style.visibility = "hidden";
+                }
+                var x3 = document.getElementById("text3");
+                if (window.getComputedStyle(x3).visibility === "visible") {
+                    x3.style.visibility = "hidden";
+                }
+                var x4 = document.getElementById("text4");
+                if (window.getComputedStyle(x4).visibility === "visible") {
+                    x4.style.visibility = "hidden";
+                }
+            }
         }
       </script>
   </head>
@@ -33,13 +65,14 @@
             <form:radiobutton path="answerType" value="Checkbox" label="Checkbox" onclick="display(this)" />
             <form:radiobutton path="answerType" value="Text Field" label="Text Field" onclick="display(this)"/>
             <br><br>
-            <form:input type="text" path="option1" id="text1" required="required" style="display:none"/>
-            <form:input type="text" path="option2" id="text2" required="required" style="display:none"/>
-            <form:input type="text" path="option3" id="text3" required="required" style="display:none"/>
-            <form:input type="text" path="option4" id="text4" required="required" style="display:none"/>
+            <form:input type="text" path="option1" id="text1" required="required" style="visibility:hidden"/><br><br>
+            <form:input type="text" path="option2" id="text2" required="required" style="visibility:hidden"/><br><br>
+            <form:input type="text" path="option3" id="text3" required="required" style="visibility:hidden"/><br><br>
+            <form:input type="text" path="option4" id="text4" required="required" style="visibility:hidden"/><br><br>
 
-            <input type="submit" value="Create Survey"/>
-
+            <input type="submit" value="Add question"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="Finish" onclick="/saveSurvey">
          </form:form>
   </body>
 </html>

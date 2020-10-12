@@ -16,7 +16,7 @@ public class SurveyQuestionsBean {
 
     @Column
     private String question;
-    @Column
+    @Column(name="answer_type")
     private String answerType;
     @Column
     private String option1;

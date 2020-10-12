@@ -18,7 +18,7 @@ public class AnswersBean {
     private String name;
     @Column
     private String emailId;
-    @Column
+    @Column(name="answer_type")
     private String answerType;
     @Column
     private String answer;
