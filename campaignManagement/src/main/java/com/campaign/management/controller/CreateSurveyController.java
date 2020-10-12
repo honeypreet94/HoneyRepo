@@ -26,6 +26,7 @@ public class CreateSurveyController {
     CreateQuestionsService createQuestionsService;
     String question;
     String answerType;
+    int count=0;
     @RequestMapping(value="/newSurvey",method= RequestMethod.POST )
     public ModelAndView createSurvey(@ModelAttribute("newSurvey")SurveyListBean bean, HttpSession session) throws IOException {
 
@@ -42,35 +43,28 @@ public class CreateSurveyController {
     @RequestMapping(value="/addQuestion",method= RequestMethod.POST )
     public ModelAndView addQuestion(@ModelAttribute("addQuestion")SurveyQuestionsBean bean)
     {
-        question=bean.getQuestion();
-
-        System.out.println("Question:" + question);
-        System.out.println("Answer:" + bean.getAnswerType());
-        if("Radio Button".equals(bean.getAnswerType()))
+        bean.setQuestion(bean.getQuestion());
+        bean.setAnswerType(bean.getAnswerType());
+        bean.setOption1(bean.getOption1());
+        bean.setOption1(bean.getOption2());
+        bean.setOption1(bean.getOption3());
+        bean.setOption1(bean.getOption4());
+        boolean result=createQuestionsService.createQuestion(
+                bean.getQuestion(),bean.getAnswerType(),bean.getOption1(),bean.getOption2(),
+                bean.getOption3(),bean.getOption4());
+        if(result==true)
         {
-            answerType="Radio Button";
-            return new ModelAndView("radioButton" , "command", new SurveyQuestionsBean());
-        }
-        else if("Checkbox".equals(bean.getAnswerType())) {
-            answerType = "Checkbox";
-            return new ModelAndView("checkbox", "command", new SurveyQuestionsBean());
-        }
-        else if("Text Field".equals(bean.getAnswerType()))
-        {
-            answerType = "Text Field";
-            return new ModelAndView("textField", "command", new SurveyQuestionsBean());
+            count++;
+            if(count<6)
+                return new ModelAndView("addQuestion");
+            else
+                return new ModelAndView("createSurvey");
         }
         else
-            return new ModelAndView("error", "command", new SurveyQuestionsBean());
-    }
+            return new ModelAndView("error");
 
-    @RequestMapping(value="/addAnswer",method= RequestMethod.POST )
-    public ModelAndView addAnswer(@ModelAttribute("addAnswer")SurveyQuestionsBean bean) {
 
-        boolean out= createQuestionsService.createQuestion(question,answerType,bean.getOptions());
-        if(out==true)
-            return new ModelAndView("createForm");
-        return new ModelAndView("error");
 
     }
+
 }

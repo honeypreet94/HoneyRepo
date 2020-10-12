@@ -15,7 +15,7 @@
                   function emailInvalid(textbox)
                            {
                                var text=textbox.value;
-                                var regex =^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$ ;
+                                var regex =/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/ ;
                                 if(text.length==0)
                                 	textbox.setCustomValidity("Please fill out Required field");
                                 else if(!regex.test(text))

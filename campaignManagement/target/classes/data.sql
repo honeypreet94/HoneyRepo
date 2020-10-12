@@ -11,7 +11,8 @@ create table surveylist (objid int auto_increment primary key, title varchar2(10
 );
 
 create table surveyquestions (objid int auto_increment primary key, questions2list int not null,
- question varchar2(2000) not null, answerType varchar2(20) not null, options varchar2(4000) not null,
+ question varchar2(2000) not null, answerType varchar2(20) not null, option1 varchar2(4000) not null,
+ option2 varchar2(4000) not null,option3 varchar2(4000) not null,option4 varchar2(4000) not null,
  foreign key (questions2list) references surveylist(objid)
 );
 

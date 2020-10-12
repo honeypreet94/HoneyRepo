@@ -5,6 +5,21 @@
 <Html>
   <head>
       <Title> CampaignRegisterationSystem </Title>
+      <script>
+        function display(text)
+        {
+            if(text.value=="Radio Button" || text.value="Checkbox")
+            {
+                document.getElementById("text1").style.visibility="visisble";
+                document.getElementById("text2").style.visibility="visisble";
+                document.getElementById("text3").style.visibility="visisble";
+                document.getElementById("text4").style.visibility="visisble";
+
+            }
+
+
+        }
+      </script>
   </head>
 
   <body>
@@ -14,10 +29,15 @@
             <form:input type="text" path="question" required="required" />
              <br><br>
             <label >What kind of responses you wish for?<label>
-            <form:radiobutton path="answerType" value="Radio Button"  label="Radio Button" />
-            <form:radiobutton path="answerType" value="Checkbox" label="Checkbox" />
-            <form:radiobutton path="answerType" value="Text Field" label="Text Field"/>
+            <form:radiobutton path="answerType" value="Radio Button"  label="Radio Button" onclick="display(this)" />
+            <form:radiobutton path="answerType" value="Checkbox" label="Checkbox" onclick="display(this)" />
+            <form:radiobutton path="answerType" value="Text Field" label="Text Field" onclick="display(this)"/>
             <br><br>
+            <form:input type="text" path="option1" id="text1" required="required" style="display:none"/>
+            <form:input type="text" path="option2" id="text2" required="required" style="display:none"/>
+            <form:input type="text" path="option3" id="text3" required="required" style="display:none"/>
+            <form:input type="text" path="option4" id="text4" required="required" style="display:none"/>
+
             <input type="submit" value="Create Survey"/>
 
          </form:form>
