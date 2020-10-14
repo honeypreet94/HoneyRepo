@@ -41,18 +41,12 @@ public class CreateSurveyController {
     @RequestMapping(value="/addQuestion",method= RequestMethod.POST )
     public ModelAndView addQuestion(@ModelAttribute("addQuestion")SurveyQuestionsBean bean, HttpSession session)
     {
-        /*bean.setQuestion(bean.getQuestion());
-        bean.setAnswerType(bean.getAnswerType());
-        bean.setOption1(bean.getOption1());
-        bean.setOption1(bean.getOption2());
-        bean.setOption1(bean.getOption3());
-        bean.setOption1(bean.getOption4());*/
         Integer integer = (Integer)session.getAttribute("surveyId");
         SurveyListBean temp = new SurveyListBean();
         temp.setObjid(integer.intValue());
         bean.setSurveyListBean(temp);
         boolean result=createQuestionsService.createQuestion(
-                bean.getQuestion(),bean.getAnswerType(),bean.getOption1(),bean.getOption2(),
+                bean.getSurveyListBean(),bean.getQuestion(),bean.getAnswerType(),bean.getOption1(),bean.getOption2(),
                 bean.getOption3(),bean.getOption4());
         if(result==true)
         {

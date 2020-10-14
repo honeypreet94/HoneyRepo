@@ -7,12 +7,11 @@ import javax.persistence.*;
 
 public class AdminBean {
 
-    @Column
+    @Column(name="objid")
     @GeneratedValue
     private int objId;
     @Id
     @Column
-
     private String email_id;
     @Column
     private String password;

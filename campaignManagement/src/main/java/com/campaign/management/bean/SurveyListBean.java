@@ -8,7 +8,7 @@ public class SurveyListBean {
 
     @Id
     @GeneratedValue
-    @Column
+    @OneToOne(cascade = {CascadeType.MERGE},fetch= FetchType.EAGER)
     private int objid;
     @Column
     private String title;

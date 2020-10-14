@@ -10,8 +10,9 @@ public class SurveyQuestionsBean {
     @Column
     private int objid;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="objid")
+    //@OneToOne(cascade = CascadeType.ALL)
+    //@JoinColumn(name="objid")
+    @OneToOne(cascade = {CascadeType.MERGE},fetch= FetchType.EAGER, mappedBy = "objid")
     private SurveyListBean surveyListBean;
 
     @Column
@@ -31,9 +32,10 @@ public class SurveyQuestionsBean {
     public SurveyQuestionsBean() {
     }
 
-    public SurveyQuestionsBean(int objid, SurveyListBean surveyListBean, String question, String answerType, String option1,String option2,String option3,String option4) {
-        this.objid = objid;
+    public SurveyQuestionsBean( SurveyListBean surveyListBean, String question, String answerType, String option1,String option2,String option3,String option4) {
+
         this.surveyListBean = surveyListBean;
+
         this.question = question;
         this.answerType = answerType;
         this.option1 = option1;

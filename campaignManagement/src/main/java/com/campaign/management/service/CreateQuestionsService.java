@@ -1,5 +1,6 @@
 package com.campaign.management.service;
 
+import com.campaign.management.bean.SurveyListBean;
 import com.campaign.management.bean.SurveyQuestionsBean;
 import com.campaign.management.repository.CreateQuestionsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +11,9 @@ public class CreateQuestionsService {
     @Autowired
     CreateQuestionsRepository createQuestionsRepository;
 
-    public boolean createQuestion(String question, String answerType,String option1, String option2, String option3, String option4)
+    public boolean createQuestion(SurveyListBean surveyListBean,String question, String answerType, String option1, String option2, String option3, String option4)
     {
-        SurveyQuestionsBean out=createQuestionsRepository.saveAndFlush(new SurveyQuestionsBean(question,answerType,option1,option2,option3,option4));
+        SurveyQuestionsBean out=createQuestionsRepository.saveAndFlush(new SurveyQuestionsBean(surveyListBean,question,answerType,option1,option2,option3,option4));
         if(null==out)
             return false;
         else
